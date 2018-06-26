@@ -1,16 +1,17 @@
 //- Declaration
 mixin slider(_class, count)
-  - var n = 0;
   .slider(class=_class)
+    input#slide-1.slider__input(name='slider' type='radio' checked)
+    - var n = 1;
+    while n < count
+      - n++
+      input.slider__input(name="slider" type="radio" id="slide-" + n)
     .slider__photo
-      input.slider__input(name="slider" type="radio" id="slide-1" checked)
-      .slider__item 
-        img.img.img--responsive(src="img/slider_1.jpg")
-      while n < (count+1)
+      - n = 0;
+      while n < (count)
         - n++
-        input.slider__input(name="slider" type="radio" id="slide-" + n)
         .slider__item 
-          img.img.img--responsive(src="img/slider_"+ n+".jpg")
+          img.img.img--responsive(src="img/slider_" + n + ".jpg")
     - n = 0;
     .slider__thumbs
       while n < count

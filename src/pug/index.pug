@@ -7,9 +7,7 @@ body
         .product
           h1.product__title Заголовок
           .product__data
-            .product__slider.slider
-              .slider__photo
-                img.img.img--responsive(src="img/slider_1.jpg")
+            +slider('product__slider',5)
             .product__desc
               .product__info
                 h2.product__subtitle Подзаголовок

@@ -110,6 +110,8 @@ h1,h2,h3,p,ul {
   &__text {
     font-size: @fsize;
     margin-bottom: 5px;
+    width: 70%;
+    min-width: 70%
   }
 
   &__slider {
@@ -132,5 +134,52 @@ h1,h2,h3,p,ul {
 
 
 .slider {
+  &__thumbs {
+    display: none;
 
+    @media @desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  &__thumb {
+    overflow: hidden;
+    cursor: pointer;
+    
+    img {
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  &__photo {
+    @media @desktop {
+      position: relative;
+      padding-top: 75%;
+      margin-bottom: 15px;
+    }
+  }
+  &__item {
+    @media @desktop {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 0.5s;
+      opacity: 0;
+    }
+  }
+
+  &__input {
+    display: none;
+    &:checked + .slider__item {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
 }

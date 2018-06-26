@@ -1,3 +1,18 @@
 /* Small Devices, Tablets */
 @desktop:    ~"only screen and (min-width : 1000px)";
 @large:      ~"only screen and (min-width : 1350px)";
+
+.slider-item-loop (@i) when (@i > 0) {
+  &:nth-of-type(@{i}):checked ~ .slider__photo .slider__item:first-of-type {
+    margin-left: percentage(-@i + 1); 
+  }
+  .slider-item-loop(@i - 1);
+}
+
+.slider-thumb-loop (@i) when (@i > 0) {
+  &:nth-of-type(@{i}):checked ~ .slider__thumbs .slider__thumb:nth-of-type(@{i}) {
+    background-color: @orange;
+  }
+  
+  .slider-thumb-loop(@i - 1);
+}

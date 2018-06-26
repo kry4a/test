@@ -1,16 +1,27 @@
 include includes/mixins.pug
 include includes/head.pug
-  body
-    main
-      section.section
+body
+  main
+    section.section
+      .container
         .product
           h1.product__title Заголовок
-          .product__slider.slider
-            p Слайдер
-          .product__desc
-            h2.product__subtitle
-            p.product__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit asperiores similique accusantium esse architecto eos, doloremque id ipsa, voluptas repudiandae tenetur molestiae voluptates, non itaque repellat. Facilis dicta repellat perferendis.
-            p.product__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit asperiores similique accusantium esse architecto eos, doloremque id ipsa, voluptas repudiandae tenetur molestiae voluptates, non itaque repellat. Facilis dicta repellat perferendis.
+          .product__data
+            .product__slider.slider
+              .slider__photo
+                img.img.img--responsive(src="img/slider_1.jpg")
+            .product__desc
+              .product__info
+                h2.product__subtitle Подзаголовок
+                p.product__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit asperiores similique accusantium esse architecto eos, doloremque id ipsa, voluptas repudiandae tenetur molestiae voluptates, non itaque repellat. Facilis dicta repellat perferendis.
+                ul.list
+                  li.list__item small list item
+                  li.list__item small list item
+                  li.list__item small list item
+                  li.list__item small list item
+              .product__info
+                h2.product__subtitle Подзаголовок
+                p.product__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit asperiores similique accusantium esse architecto eos, doloremque id ipsa, voluptas repudiandae tenetur molestiae voluptates, non itaque repellat. Facilis dicta repellat perferendis.
           .product__buttons
-            a.btn Купить
+            a.btn.btn--round(href="#" title="Купить") Купить
 
